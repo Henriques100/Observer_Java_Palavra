@@ -1,0 +1,66 @@
+import java.util.ArrayList;
+
+// Classe Subject
+class ContadorPalavras {
+    private List<Observer> observers = new ArrayList<>();
+
+    private String frase;
+
+    public void setFrase(String frase) {
+        this.frase = frase;
+        notificarObservers();
+    }
+
+    public int contarTodasPalavras() {
+        if (frase == null || frase.isEmpty()) {
+            return 0;
+        }
+
+        String[] palavras = frase.split("\\s+");
+        return palavras.length;
+    }
+
+    public int contarPalavrasParesCaracteres() {
+        if (frase == null || frase.isEmpty()) {
+            return 0;
+        }
+
+        String[] palavras = frase.split("\\s+");
+        int contador = 0;
+
+        for (String palavra : palavras) {
+            if (palavra.length() % 2 == 0) {
+                contador++;
+            }
+        }
+
+        return contador;
+    }
+
+    public int contarPalavrasComMaiusculas() {
+        if (frase == null || frase.isEmpty()) {
+            return 0;
+        }
+
+        String[] palavras = frase.split("\\s+");
+        int contador = 0;
+
+        for (String palavra : palavras) {
+            if (Character.isUpperCase(palavra.charAt(0))) {
+                contador++;
+            }
+        }
+
+        return contador;
+    }
+
+    public void addObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    public void notificarObservers() {
+        for (Observer observer : observers) {
+            observer.update(this);
+        }
+    }
+}

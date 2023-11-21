@@ -1,0 +1,18 @@
+import java.util.List;
+
+// Classe principal
+public class AplicativoContadorPalavras {
+    public static void main(String[] args) {
+        ContadorPalavras contador = new ContadorPalavras();
+        ExibicaoContagemObserver observer = new ExibicaoContagemObserver();
+        contador.addObserver(observer);
+
+        // Exemplo de uso
+        contador.setFrase("Esta é uma frase de exemplo para testar o contador de palavras.");
+
+        // Você pode chamar setFrase() novamente com uma nova frase para obter uma nova contagem
+        contador.setFrase("Outra frase interessante.");
+
+        // Adicione mais funcionalidades conforme necessário
+    }
+}

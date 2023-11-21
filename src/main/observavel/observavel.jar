@@ -1,0 +1,11 @@
+// Classe Observadora
+class ExibicaoContagemObserver implements Observer {
+    @Override
+    public void update(ContadorPalavras contador) {
+        System.out.println("Contagem de palavras:");
+        System.out.println("Todas as palavras: " + contador.contarTodasPalavras());
+        System.out.println("Palavras com pares de caracteres: " + contador.contarPalavrasParesCaracteres());
+        System.out.println("Palavras começadas com maiúsculas: " + contador.contarPalavrasComMaiusculas());
+        System.out.println();
+    }
+}
