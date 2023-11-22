@@ -4,10 +4,32 @@ public class test {
     @test
     public void teste_1() {
         ContadorPalavras contador_1 = new ContadorPalavras();
-        ExibicaoContagemObserver observer = new ExibicaoContagemObserver();
-        contador_1.addObserver(observer);
 
         contador_1.contarTodasPalavras("Joao comeu a maca");
         contador_1.contarPalavrasComMaiusculas("Jonas Foi viajar");
+    }
+
+    @test
+    public void teste_2() {
+        ContadorPalavras contador_2 = new ContadorPalavras();
+
+        contador_2.contarTodasPalavras("A liberdade eh o alimento do amor!");
+        contador_2.contarPalavrasComMaiusculas("O amor eh pahssaro que nao vive em gaiola!");
+    }
+
+    @test
+    public void teste_3() {
+        ContadorPalavras contador_3 = new ContadorPalavras();
+
+        contador_3.contarTodasPalavras("Para bom entendedor, meia palavra basta");
+        contador_3.contarPalavrasComMaiusculas("Casa de ferreiro, espeto de pau");
+    }
+
+    @test
+    public void teste_4() {
+        ContadorPalavras contador_4 = new ContadorPalavras();
+
+        contador_4.contarTodasPalavras("Onde há fumaça há fogo");
+        contador_4.contarPalavrasComMaiusculas("Pimenta nos olhos dos outros é refresco");
     }
 }
